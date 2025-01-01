@@ -15,23 +15,27 @@ public class CalcController {
     }
 
     @GetMapping("/plus")
-    public String answerPlus(@RequestParam(defaultValue = "0.0") double num1, @RequestParam(defaultValue = "0.0") double num2) {
+    public String answerPlus(@RequestParam() double num1, @RequestParam() double num2) {
         return calcService.plus(num1, num2);
     }
 
     @GetMapping("/minus")
-    public String answerMinus(@RequestParam(defaultValue = "0.0") double num1, @RequestParam(defaultValue = "0.0") double num2) {
+    public String answerMinus(@RequestParam() double num1, @RequestParam() double num2) {
         return calcService.minus(num1, num2);
     }
 
     @GetMapping("/multiply")
-    public String answerMultiply(@RequestParam(defaultValue = "0.0") double num1, @RequestParam(defaultValue = "0.0") double num2) {
+    public String answerMultiply(@RequestParam() double num1, @RequestParam() double num2) {
         return calcService.multiply(num1, num2);
     }
 
     @GetMapping("/divide")
-    public String answerDivide(@RequestParam(defaultValue = "0.0") double num1, @RequestParam(defaultValue = "0.0") double num2) {
+    public String answerDivide(@RequestParam() double num1, @RequestParam() double num2) {
         return calcService.divide(num1, num2);
     }
 
+    @GetMapping("")
+    public String welcome() {
+        return calcService.welcome();
+    }
 }

@@ -23,7 +23,14 @@ public class CalcServiceImpl implements CalcService {
 
     @Override
     public String divide(double num1, double num2) {
-        if (num2 == 0) return "Ошибка! Деление на ноль";
+        if (num2 == 0) {
+            throw new ZeroDivideException("Ошибка! Деление на ноль");
+        }
         return String.format(Locale.ROOT, "%f / %f = %f", num1, num2, num1 / num2);
+    }
+
+    @Override
+    public String welcome() {
+        return "Добро пожаловать в калькулятор";
     }
 }

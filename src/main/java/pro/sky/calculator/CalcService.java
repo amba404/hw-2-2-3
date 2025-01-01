@@ -8,4 +8,6 @@ public interface CalcService {
     String multiply(double num1, double num2);
 
     String divide(double num1, double num2);
+
+    String welcome();
 }
